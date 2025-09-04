@@ -16,6 +16,7 @@ docker network create npm-nw
 docker network create npm-internal
 cd /home/nginx-proxy | docker-compose up -d
 docker ps -a
+ufw allow 22
 ufw allow 80
 ufw allow 81
 ufw allow 443
