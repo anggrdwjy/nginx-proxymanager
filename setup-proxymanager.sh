@@ -14,7 +14,8 @@ mkdir /home/nginx-proxy/letsencrypt
 cp support/docker-compose.yml /home/nginx-proxy/
 docker network create npm-nw
 docker network create npm-internal
-cd /home/nginx-proxy | docker-compose up -d
+cd /home/nginx-proxy
+docker-compose up -d
 docker ps -a
 ufw allow 22
 ufw allow 80
