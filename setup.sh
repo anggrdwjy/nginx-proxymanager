@@ -8,16 +8,16 @@ chmod +x /usr/local/bin/docker-compose
 sudo apt-get update -y
 docker network create portainer_network
 docker volume create portainer_data
-mkdir /home/portainer
-cp support/docker-portainer.yml /home/portainer/docker-compose.yml
-cd /home/portainer
-docker-compose up -d
 docker network create npm_network
 docker network create npm_internal
+mkdir /home/portainer
 mkdir /home/nginx-proxy
 mkdir /home/nginx-proxy/data
 mkdir /home/nginx-proxy/letsencrypt
+cp support/docker-portainer.yml /home/portainer/docker-compose.yml
 cp support/docker-nginxproxy.yml /home/nginx-proxy/docker-compose.yml
+cd /home/portainer
+docker-compose up -d
 cd /home/nginx-proxy
 docker-compose up -d
 docker ps -a
