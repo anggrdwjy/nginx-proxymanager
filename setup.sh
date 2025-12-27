@@ -14,12 +14,10 @@ mkdir /home/portainer
 mkdir /home/nginx-proxy
 mkdir /home/nginx-proxy/data
 mkdir /home/nginx-proxy/letsencrypt
-cp support/docker-portainer.yml /home/portainer/docker-compose.yml
-cp support/docker-nginxproxy.yml /home/nginx-proxy/docker-compose.yml
-cd /home/portainer
-docker-compose up -d
-cd /home/nginx-proxy
-docker-compose up -d
+cp support/docker-portainer.yml /home/portainer/
+cd /home/portainer && docker-compose -f docker-portainer.yml up -d
+cp support/docker-nginxproxy.yml /home/nginx-proxy/
+cd /home/nginx-proxy && docker-compose -f docker-nginxproxy.yml up -d
 docker ps -a
 ufw allow 22
 ufw allow 81
