@@ -4,8 +4,8 @@ services:
     container_name: npm-app
     restart: unless-stopped
     ports:
-      - '443:443' # Public HTTPS Port
-      - '81:81' # Admin Web Port
+      - '443:443'
+      - '81:81'
     environment:
       DB_MYSQL_HOST: "npm-db"
       DB_MYSQL_PORT: 3306
