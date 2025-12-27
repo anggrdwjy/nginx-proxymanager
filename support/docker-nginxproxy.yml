@@ -34,3 +34,7 @@ services:
       - ./data/mysql:/var/lib/mysql
     networks:
       - npm_internal
+
+networks:
+  npm_internal:
+  npm_network:
