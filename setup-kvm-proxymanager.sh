@@ -10,10 +10,11 @@ mkdir /home/portainer
 mkdir /home/nginx-proxy
 mkdir /home/nginx-proxy/data
 mkdir /home/nginx-proxy/letsencrypt
-cp support/docker-portainer.yml /home/portianer/
+cp support/docker-portainer.yml /home/portainer/
 cp support/docker-nginxproxymanager.yml /home/nginx-proxy/
 docker network create npm-nw
 docker network create npm-internal
+docker network create portainer-network
 cd /home/portainer
 docker-compose up -d
 cd /home/nginx-proxy
@@ -22,6 +23,7 @@ docker ps -a
 ufw allow 22
 ufw allow 81
 ufw allow 443
+ufw allow 9443
 ufw enable
 systemctl status ufw
 echo "   ==============================================   ";
