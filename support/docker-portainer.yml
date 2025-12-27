@@ -10,3 +10,10 @@ services:
       - portainer_data:/data
     networks:
       - portainer_network
+
+volumes:
+  portainer_data:
+    name: portainer_data
+
+networks:
+  portainer_network:
