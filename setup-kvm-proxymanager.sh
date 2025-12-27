@@ -6,12 +6,16 @@ sudo apt-get install curl software-properties-common docker.io -y
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 sudo apt-get update -y
+mkdir /home/portainer
 mkdir /home/nginx-proxy
 mkdir /home/nginx-proxy/data
 mkdir /home/nginx-proxy/letsencrypt
-cp support/docker-compose.yml /home/nginx-proxy/
+cp support/docker-portainer.yml /home/portianer/
+cp support/docker-nginxproxymanager.yml /home/nginx-proxy/
 docker network create npm-nw
 docker network create npm-internal
+cd /home/portainer
+docker-compose up -d
 cd /home/nginx-proxy
 docker-compose up -d
 docker ps -a
