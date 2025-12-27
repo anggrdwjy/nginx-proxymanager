@@ -10,8 +10,8 @@ mkdir /home/portainer
 mkdir /home/nginx-proxy
 mkdir /home/nginx-proxy/data
 mkdir /home/nginx-proxy/letsencrypt
-cp support/docker-portainer.yml /home/portainer/
-cp support/docker-nginxproxymanager.yml /home/nginx-proxy/
+cp support/docker-portainer.yml /home/portainer/docker-compose.yml
+cp support/docker-nginxproxymanager.yml /home/nginx-proxy/docker-compose.yml
 docker network create npm-nw
 docker network create npm-internal
 docker network create portainer-network
