@@ -1,13 +1,13 @@
 services:
-  npm-app:
+  npm_app:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: npm-app
+    container_name: npm_app
     restart: unless-stopped
     ports:
-      - '443:443'
-      - '81:81'
+      - 443:443
+      - 81:81
     environment:
-      DB_MYSQL_HOST: "npm-db"
+      DB_MYSQL_HOST: "npm_db"
       DB_MYSQL_PORT: 3306
       DB_MYSQL_USER: "npm"
       DB_MYSQL_PASSWORD: "npm"
@@ -16,14 +16,14 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     depends_on:
-      - npm-db
+      - npm_db
     networks:
-      - npm-nw
-      - npm-internal
+      - npm_network
+      - npm_internal
 
-  npm-db:
+  npm_db:
     image: 'mariadb:latest'
-    container_name: npm-db
+    container_name: npm_db
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
@@ -33,9 +33,4 @@ services:
     volumes:
       - ./data/mysql:/var/lib/mysql
     networks:
-      - npm-internal
-
-networks:
-  npm-internal:
-  npm-nw:
-    external: true
+      - npm_internal
