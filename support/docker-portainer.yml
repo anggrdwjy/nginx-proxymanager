@@ -1,10 +1,10 @@
 services:
-  portainer_app:
+  portainer:
+    container_name: portainer
     image: portainer/portainer-ce:lts
-    container_name: portainer_app
-    restart: unless-stopped
     ports:
-      - 9443:9443
+      - '19443:9443' # Dashboard Portainer
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
@@ -13,7 +13,6 @@ services:
 
 volumes:
   portainer_data:
-    name: portainer_data
 
 networks:
   portainer_network:
