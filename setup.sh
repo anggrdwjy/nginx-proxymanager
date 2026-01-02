@@ -6,22 +6,18 @@ sudo apt-get install curl software-properties-common docker.io -y
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 sudo apt-get update -y
-docker network create portainer_network
-docker volume create portainer_data
-docker network create npm_network
-docker network create npm_internal
 mkdir /home/portainer
-mkdir /home/nginx-proxy
-mkdir /home/nginx-proxy/data
-mkdir /home/nginx-proxy/letsencrypt
-cp support/docker-portainer.yml /home/portainer/
-cp support/docker-nginxproxy.yml /home/nginx-proxy/
-cd /home/portainer && docker-compose -f docker-portainer.yml up -d
-cd /home/nginx-proxy && docker-compose -f docker-nginxproxy.yml up -d
+mkdir /home/nginx_proxymanager
+mkdir /home/nginx_proxymanager/data
+mkdir /home/nginx_proxymanager/letsencrypt
+cp support/docker-portainer.yml /home/portainer/docker-compose.yml
+cp support/docker-nginxproxy.yml /home/nginx_proxymanager/docker-compose.yml
+cd /home/portainer && docker-compose up -d
+cd /home/nginx_proxymanager && docker-compose up -d
 docker ps -a
-ufw allow 22
-ufw allow 81
+ufw allow 21112
+ufw allow 8123
 ufw allow 443
-ufw allow 9443
+ufw allow 19443
 ufw enable
 systemctl status ufw
