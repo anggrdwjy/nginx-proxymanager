@@ -1,40 +1,40 @@
 services:
-  npm_app:
+  nginx_proxymanager:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: npm_app
+    container_name: nginx_proxymanager
     restart: unless-stopped
     ports:
-      - 443:443
-      - 81:81
+      - '443:443' # HTTPS Only
+      - '8123:81' # Dashboard NginxProxyManager
     environment:
-      DB_MYSQL_HOST: "npm_db"
+      DB_MYSQL_HOST: "nginx_database"
       DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_USER: "npm" # Please Change Default User
+      DB_MYSQL_PASSWORD: "npm" # Please Change Default Password
       DB_MYSQL_NAME: "npm"
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     depends_on:
-      - npm_db
+      - nginx_database
     networks:
-      - npm_network
-      - npm_internal
+      - nginx_network
+      - nginx_internal
 
-  npm_db:
+  nginx_database:
     image: 'mariadb:latest'
-    container_name: npm_db
+    container_name: nginx_database
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD: 'npm' # Please Change Root Password
       MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_USER: 'npm' # Please Change Default User
+      MYSQL_PASSWORD: 'npm' # Please Change Default Password
     volumes:
       - ./data/mysql:/var/lib/mysql
     networks:
-      - npm_internal
+      - nginx_internal
 
 networks:
-  npm_internal:
-  npm_network:
+  nginx_network:
+  nginx_internal:
