@@ -49,6 +49,7 @@ Reading package lists... Done
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
+* * * * * *
 CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
 4fb19acc8fd0   jc21/nginx-proxy-manager:latest   "/init"                  9 seconds ago    Up 6 seconds    80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 0.0.0.0:8123->81/tcp, [::]:8123->81/tcp   nginx_proxymanager
 058c2ca773c2   mariadb:latest                    "docker-entrypoint.s…"   13 seconds ago   Up 10 seconds   3306/tcp                                                                                   nginx_database
