@@ -4,7 +4,7 @@ services:
     image: portainer/portainer-ce:lts
     ports:
       - '19443:9443' # Dashboard Portainer
-    restart: always
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
