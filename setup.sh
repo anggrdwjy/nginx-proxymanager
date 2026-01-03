@@ -15,7 +15,7 @@ cp support/docker-nginxproxy.yml /home/nginx_proxymanager/docker-compose.yml
 cd /home/portainer && docker-compose up -d
 cd /home/nginx_proxymanager && docker-compose up -d
 docker ps -a
-ufw allow 21112
+ufw allow 22
 ufw allow 8123
 ufw allow 443
 ufw allow 19443
