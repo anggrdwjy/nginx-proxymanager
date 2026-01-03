@@ -49,20 +49,40 @@ Reading package lists... Done
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
+CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
+4fb19acc8fd0   jc21/nginx-proxy-manager:latest   "/init"                  9 seconds ago    Up 6 seconds    80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 0.0.0.0:8123->81/tcp, [::]:8123->81/tcp   nginx_proxymanager
+058c2ca773c2   mariadb:latest                    "docker-entrypoint.s…"   13 seconds ago   Up 10 seconds   3306/tcp                                                                                   nginx_database
+00d9e002177b   portainer/portainer-ce:lts        "/portainer"             7 minutes ago    Up 7 minutes    8000/tcp, 9000/tcp, 0.0.0.0:19443->9443/tcp, [::]:19443->9443/tcp                          portainer
+Rules updated
+Rules updated (v6)
+Rules updated
+Rules updated (v6)
+Rules updated
+Rules updated (v6)
+Rules updated
+Rules updated (v6)
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+Firewall is active and enabled on system startup
+● ufw.service - Uncomplicated firewall
+     Loaded: loaded (/usr/lib/systemd/system/ufw.service; enabled; preset: enabled)
+     Active: active (exited) since Sat 2026-01-03 09:40:15 UTC; 13min ago
+       Docs: man:ufw(8)
+   Main PID: 363 (code=exited, status=0/SUCCESS)
+        CPU: 3ms
+
+Jan 03 09:40:15 ubuntu systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jan 03 09:40:15 ubuntu systemd[1]: Finished ufw.service - Uncomplicated firewall.
+root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
 ## Verification Docker
 ```
-docker ps -a
-```
-```
-root@nginx-proxymanager:/home/ubuntu# docker ps -a
-CONTAINER ID   IMAGE                             COMMAND                  CREATED        STATUS        PORTS                                                                                  NAMES
-e3d5ae138e56   jc21/nginx-proxy-manager:latest   "/init"                  31 hours ago   Up 20 hours   0.0.0.0:81->81/tcp, [::]:81->81/tcp, 80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp   nginx_proxymanager
-a186c0faf5e9   mariadb:latest                    "docker-entrypoint.s…"   31 hours ago   Up 20 hours   3306/tcp                                                                               nginx_database
-fa47ad941f04   portainer/portainer-ce:lts        "/portainer"             31 hours ago   Up 20 hours   8000/tcp, 9000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp                        portainer
-root@nginx-proxymanager:/home/ubuntu#
-
+root@ubuntu:/home/ubuntu/nginx-proxymanager# docker ps -a
+CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
+4fb19acc8fd0   jc21/nginx-proxy-manager:latest   "/init"                  52 seconds ago   Up 49 seconds   80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 0.0.0.0:8123->81/tcp, [::]:8123->81/tcp   nginx_proxymanager
+058c2ca773c2   mariadb:latest                    "docker-entrypoint.s…"   56 seconds ago   Up 52 seconds   3306/tcp                                                                                   nginx_database
+00d9e002177b   portainer/portainer-ce:lts        "/portainer"             8 minutes ago    Up 8 minutes    8000/tcp, 9000/tcp, 0.0.0.0:19443->9443/tcp, [::]:19443->9443/tcp                          portainer
+root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
 ## Support
