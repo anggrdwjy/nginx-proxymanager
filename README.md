@@ -6,6 +6,8 @@ Before using this program, make sure to update the repository `sudo apt update` 
 
 ## Features
 * Simple Script For Build Nginx Proxy Manager
+* Include Portainer for Manage Docker Container
+* Activation Firewall
 
 ## Tested Version
 * Ubuntu 24.04
@@ -13,21 +15,43 @@ Before using this program, make sure to update the repository `sudo apt update` 
 
 ## Installing Program
 ```
-git clone https://github.com/anggrdwjy/nginx-proxymanager.git
-```
-```
-cd nginx-proxymanager
-```
-```
-chmod -R 777 *
+root@ubuntu:/home/ubuntu# git clone https://github.com/anggrdwjy/nginx-proxymanager.git          
+Cloning into 'nginx-proxymanager'...
+remote: Enumerating objects: 134, done.
+remote: Counting objects: 100% (134/134), done.
+remote: Compressing objects: 100% (130/130), done.
+remote: Total 134 (delta 36), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (134/134), 43.54 KiB | 228.00 KiB/s, done.
+Resolving deltas: 100% (36/36), done.
+root@ubuntu:/home/ubuntu# cd nginx-proxymanager/
+root@ubuntu:/home/ubuntu/nginx-proxymanager# chmod -R 777 *
+root@ubuntu:/home/ubuntu/nginx-proxymanager# ls -l
+total 12
+-rwxrwxrwx 1 root root 2010 Jan  3 09:41 README.md
+-rwxrwxrwx 1 root root  848 Jan  3 09:41 setup.sh
+drwxrwxrwx 2 root root 4096 Jan  3 09:41 support
+root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
 ## Running Program
 ```
-./setup.sh
+root@ubuntu:/home/ubuntu/nginx-proxymanager# ./setup.sh 
+Hit:1 http://id.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://id.archive.ubuntu.com/ubuntu noble-updates InRelease          
+Hit:3 http://id.archive.ubuntu.com/ubuntu noble-backports InRelease          
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]    
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [71.4 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Fetched 219 kB in 2s (97.0 kB/s)           
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
 ```
 
-## Verification Proxmox
+## Verification Docker
 ```
 docker ps -a
 ```
@@ -50,6 +74,6 @@ root@nginx-proxymanager:/home/ubuntu#
 ## Bugs
 
 Please open an issue on GitHub with as much information as possible if you found a bug.
-* Your Proxmox Version
+* Your Docker Version
 * All the logs and message outputted
 * etc
