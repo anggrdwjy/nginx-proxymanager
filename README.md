@@ -86,6 +86,17 @@ CONTAINER ID   IMAGE                             COMMAND                  CREATE
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
+## Testing Access Web UI
+
+Dashboard UI Portainer
+```
+https://ip-address:19443
+```
+
+Dashboard UI Nginx Proxy Manager
+```
+https://ip-address:8123
+```
 ## Support
 
 * [:octocat: Follow me on GitHub](https://github.com/anggrdwjy)
