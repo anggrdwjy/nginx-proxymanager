@@ -10,8 +10,8 @@ mkdir /home/portainer
 mkdir /home/nginx_proxymanager
 mkdir /home/nginx_proxymanager/data
 mkdir /home/nginx_proxymanager/letsencrypt
-cp support/docker-portainer.yml /home/portainer/docker-compose.yml
-cp support/docker-nginxproxy.yml /home/nginx_proxymanager/docker-compose.yml
+cp docker-portainer.yml /home/portainer/docker-compose.yml
+cp docker-nginxproxy.yml /home/nginx_proxymanager/docker-compose.yml
 cd /home/portainer && docker-compose up -d
 cd /home/nginx_proxymanager && docker-compose up -d
 docker ps -a
