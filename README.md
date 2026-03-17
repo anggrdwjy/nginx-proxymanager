@@ -1,4 +1,4 @@
-## Build Nginx Proxy Manager on Docker Compose
+## Overview Proxy Manager for Website Development
 
 <p align="center">
 <img src="img/proxyman.png">
