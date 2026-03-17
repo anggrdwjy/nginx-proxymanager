@@ -1,23 +1,23 @@
-## This Script Automation For Build Nginx Proxy Manager on Docker Compose
+## Build Nginx Proxy Manager on Docker Compose
 
 <p align="center">
 <img src="img/proxyman.png">
 </p>
 
-## Information
+#### Information
 
 Before using this program, make sure to update the repository `sudo apt update` and install git `sudo apt install git -y` to maximize the running of the program. I am not responsible for any consequences caused by this program. It is recommended to use this script when the new server is installed. This program has been tested on Ubuntu Server 24.04 or Newer
 
-## Features
+#### Features
 * Simple Script For Build Nginx Proxy Manager
 * Include Portainer for Manage Docker Container
 * Activation Firewall
 
-## Tested Version
+#### Tested Version
 * Ubuntu 24.04
 * Newer
 
-## Installing Program
+#### Installing Program
 ```
 root@ubuntu:/home/ubuntu# git clone https://github.com/anggrdwjy/nginx-proxymanager.git          
 Cloning into 'nginx-proxymanager'...
@@ -37,7 +37,7 @@ drwxrwxrwx 2 root root 4096 Jan  3 09:41 support
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-## Running Program
+#### Running Program
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# ./setup.sh 
 Hit:1 http://id.archive.ubuntu.com/ubuntu noble InRelease
@@ -80,7 +80,7 @@ Jan 03 09:40:15 ubuntu systemd[1]: Finished ufw.service - Uncomplicated firewall
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-## Verification Docker
+#### Verification Docker
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# docker ps -a
 CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
@@ -90,7 +90,7 @@ CONTAINER ID   IMAGE                             COMMAND                  CREATE
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-## Testing Access Web UI
+#### Testing Access Web UI
 
 Dashboard UI Portainer
 ```
@@ -107,7 +107,7 @@ https://ip-address:8123
 * [🔔 Subscribe me on Youtube](https://www.youtube.com/@anggarda.wijaya)
 
 
-## Bugs
+#### Bugs
 
 Please open an issue on GitHub with as much information as possible if you found a bug.
 * Your Docker Version
