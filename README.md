@@ -17,7 +17,7 @@ Before using this program, make sure to update the repository `sudo apt update` 
 * Ubuntu 24.04
 * Newer
 
-#### Installing Program
+### Installing Program
 ```
 root@ubuntu:/home/ubuntu# git clone https://github.com/anggrdwjy/nginx-proxymanager.git          
 Cloning into 'nginx-proxymanager'...
@@ -37,7 +37,7 @@ drwxrwxrwx 2 root root 4096 Jan  3 09:41 support
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-#### Running Program
+### Running Program
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# ./setup.sh 
 Hit:1 http://id.archive.ubuntu.com/ubuntu noble InRelease
@@ -80,7 +80,7 @@ Jan 03 09:40:15 ubuntu systemd[1]: Finished ufw.service - Uncomplicated firewall
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-#### Verification Docker
+### Verification Docker
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# docker ps -a
 CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
@@ -90,7 +90,7 @@ CONTAINER ID   IMAGE                             COMMAND                  CREATE
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-#### Testing Access Web UI
+### Testing Access Web UI
 
 Dashboard UI Portainer
 ```
