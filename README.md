@@ -1,4 +1,4 @@
-## Overview Proxy Manager for Website Development
+## A. Overview Proxy Manager
 
 <p align="center">
 <img src="img/proxyman.png">
@@ -8,6 +8,12 @@
 
 Before using this program, make sure to update the repository `sudo apt update` and install git `sudo apt install git -y` to maximize the running of the program. I am not responsible for any consequences caused by this program. It is recommended to use this script when the new server is installed. This program has been tested on Ubuntu Server 24.04 or Newer
 
+* [A. Overview Proxy Manager](#a-overview-proxy-manager)
+* [B. Installing Program](#b-installing-program)
+* [C. Running Program](#c-running-program)
+* [D. Verification](#d-verification)
+* 
+  
 #### Features
 * Simple Script For Build Nginx Proxy Manager
 * Include Portainer for Manage Docker Container
@@ -17,7 +23,7 @@ Before using this program, make sure to update the repository `sudo apt update` 
 * Ubuntu 24.04
 * Newer
 
-### Installing Program
+## B. Installing Program
 ```
 root@ubuntu:/home/ubuntu# git clone https://github.com/anggrdwjy/nginx-proxymanager.git          
 Cloning into 'nginx-proxymanager'...
@@ -37,7 +43,7 @@ drwxrwxrwx 2 root root 4096 Jan  3 09:41 support
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-### Running Program
+## C. Running Program
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# ./setup.sh 
 Hit:1 http://id.archive.ubuntu.com/ubuntu noble InRelease
@@ -80,7 +86,7 @@ Jan 03 09:40:15 ubuntu systemd[1]: Finished ufw.service - Uncomplicated firewall
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-### Verification Docker
+## D. Verification
 ```
 root@ubuntu:/home/ubuntu/nginx-proxymanager# docker ps -a
 CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES
@@ -90,17 +96,18 @@ CONTAINER ID   IMAGE                             COMMAND                  CREATE
 root@ubuntu:/home/ubuntu/nginx-proxymanager# 
 ```
 
-### Testing Access Web UI
+#### Testing Access Web UI
 
-Dashboard UI Portainer
+* Dashboard UI Portainer
 ```
 https://ip-address:19443
 ```
 
-Dashboard UI Nginx Proxy Manager
+* Dashboard UI Nginx Proxy Manager
 ```
 https://ip-address:8123
 ```
+
 ## Support
 
 * [:octocat: Follow me on GitHub](https://github.com/anggrdwjy)
