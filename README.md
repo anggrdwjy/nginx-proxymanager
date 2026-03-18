@@ -5,14 +5,10 @@
 </p>
 
 ### Information
-
-Before using this program, make sure to update the repository `sudo apt update` and install git `sudo apt install git -y` to maximize the running of the program. I am not responsible for any consequences caused by this program. It is recommended to use this script when the new server is installed. This program has been tested on Ubuntu Server 24.04 or Newer
-
 * [A. Overview Proxy Manager](#a-overview-proxy-manager)
 * [B. Installing Program](#b-installing-program)
 * [C. Running Program](#c-running-program)
 * [D. Verification](#d-verification)
-* 
   
 #### Features
 * Simple Script For Build Nginx Proxy Manager
@@ -24,6 +20,9 @@ Before using this program, make sure to update the repository `sudo apt update` 
 * Newer
 
 ## B. Installing Program
+
+Before using this program, make sure to update the repository `sudo apt update` and install git `sudo apt install git -y` to maximize the running of the program. I am not responsible for any consequences caused by this program. It is recommended to use this script when the new server is installed. This program has been tested on Ubuntu Server 24.04 or Newer
+
 ```
 root@ubuntu:/home/ubuntu# git clone https://github.com/anggrdwjy/nginx-proxymanager.git          
 Cloning into 'nginx-proxymanager'...
